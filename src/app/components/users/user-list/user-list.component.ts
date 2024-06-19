@@ -21,8 +21,7 @@ export class UserListComponent implements OnInit {
     this.userService.getAllUsers().subscribe(users => this.users = users);
   }
 
-  editUser(event: Event, id: number): void {
-    event.preventDefault();
+  editUser(id: number): void {
     console.log(`Navigating to edit user with ID: ${id}`);
     this.router.navigate(['/users/edit', id]);
   }

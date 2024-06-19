@@ -25,8 +25,7 @@
         <td>{{ user.profile }}</td>
         <td>{{ user.active ? 'Sim' : 'Não' }}</td>
         <td>
-          <!--a [routerLink]="['/users/edit', user.id]">Editar</a-->
-          <button (click)="editUser($event, user.id)" class="btn btn-danger">Editar</button>
+          <button (click)="editUser(user.id)" class="btn btn-danger">Editar</button>
           <button (click)="deactivateUser(user.id)" class="btn btn-danger">Desativar</button>
         </td>
       </tr>

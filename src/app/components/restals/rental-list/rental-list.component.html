@@ -1,0 +1,15 @@
+<div class="rental-list">
+    <h2>Rental List</h2>
+    <table>
+      <tr *ngFor="let rental of rentals">
+        <td>{{ rental.user.name }}</td>
+        <td>{{ rental.book.title }}</td>
+        <td>{{ rental.rentalDate }}</td>
+        <td>{{ rental.returnDate }}</td>
+        <td>
+          <button [routerLink]="['/rentals/edit', rental.id]">Edit</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+  

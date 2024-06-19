@@ -1,0 +1,23 @@
+<div class="user-form">
+    <h2>{{ isEdit ? 'Edit User' : 'Create User' }}</h2>
+    <form (ngSubmit)="save()">
+      <div>
+        <label for="name">Name</label>
+        <input id="name" [(ngModel)]="user.name" name="name" required>
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input id="email" [(ngModel)]="user.email" name="email" required>
+      </div>
+      <div>
+        <label for="profile">Profile</label>
+        <input id="profile" [(ngModel)]="user.profile" name="profile" required>
+      </div>
+      <div>
+        <label for="active">Active</label>
+        <input id="active" type="checkbox" [(ngModel)]="user.active" name="active">
+      </div>
+      <button type="submit">{{ isEdit ? 'Update' : 'Create' }}</button>
+    </form>
+  </div>
+  

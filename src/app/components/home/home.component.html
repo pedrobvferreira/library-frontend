@@ -1,0 +1,8 @@
+<h1>Home da Biblioteca</h1>
+<nav>
+  <ul>
+    <li><a routerLink="/">Home</a></li>
+    <li *ngIf="isUser || isAdmin"><a routerLink="/books">Livros</a></li>
+    <li *ngIf="isAdmin"><a routerLink="/users">Utilizadores</a></li>
+  </ul>
+</nav>

@@ -8,7 +8,8 @@ import { RentalListComponent } from './components/restals/rental-list/rental-lis
 import { RentalFormComponent } from './components/restals/rental-form/rental-form.component';
 
 export const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
   { path: 'users', component: UserListComponent },
   { path: 'users/new', component: UserFormComponent },
   { path: 'users/edit/:id', component: UserFormComponent },

@@ -7,7 +7,7 @@ import { UsersDTO } from '../models/users.dto';
   providedIn: 'root'
 })
 export class UserService {
-  private apiUrl = 'http://localhost:8080/api/users';
+  private apiUrl = 'http://localhost:9091/api/users';
 
   constructor(private http: HttpClient) { }
 

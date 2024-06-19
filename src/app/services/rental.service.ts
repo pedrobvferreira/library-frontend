@@ -7,7 +7,7 @@ import { RentalsDTO } from '../models/rentals.dto';
   providedIn: 'root'
 })
 export class RentalService {
-  private apiUrl = 'http://localhost:8080/api/rentals';
+  private apiUrl = 'http://localhost:9091/api/rentals';
 
   constructor(private http: HttpClient) { }
 

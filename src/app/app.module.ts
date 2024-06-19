@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
-import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { UserListComponent } from './components/users/user-list/user-list.component';
 import { UserFormComponent } from './components/users/user-form/user-form.component';
@@ -19,7 +18,6 @@ import { RentalService } from './services/rental.service';
 
 @NgModule({
   declarations: [
-    AppComponent,
     HomeComponent,
     UserListComponent,
     UserFormComponent,
@@ -34,6 +32,6 @@ import { RentalService } from './services/rental.service';
     FormsModule
   ],
   providers: [AuthService, UserService, BookService, RentalService],
-  bootstrap: [AppComponent]
+  bootstrap: []
 })
 export class AppModule { }

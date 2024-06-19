@@ -22,6 +22,6 @@ export class BookListComponent implements OnInit {
   }
 
   editBook(id: number): void {
-    this.router.navigate(['/book-form', id]);
+    this.router.navigate(['/books/edit', id]);
   }
 }

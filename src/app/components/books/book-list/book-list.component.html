@@ -1,24 +1,31 @@
-<h2>List of Books</h2>
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Category</th>
-      <th>Quantity</th>
-      <th>Available</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let book of books">
-      <td>{{ book.title }}</td>
-      <td>{{ book.category }}</td>
-      <td>{{ book.quantity }}</td>
-      <td>{{ book.available ? 'Yes' : 'No' }}</td>
-      <td>
-        <button (click)="editBook(book.id)">Edit</button>
-      </td>
-    </tr>
-  </tbody>
-</table>
-<p *ngIf="books.length === 0">No books found.</p>
+<div class="container">
+  <nav>
+    <ul>
+      <li><a routerLink="/">Home</a></li>
+    </ul>
+  </nav>
+  <h2>List of Books</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Category</th>
+        <th>Quantity</th>
+        <th>Available</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books">
+        <td>{{ book.title }}</td>
+        <td>{{ book.category }}</td>
+        <td>{{ book.quantity }}</td>
+        <td>{{ book.available ? 'Yes' : 'No' }}</td>
+        <td>
+          <button (click)="editBook(book.id)">Edit</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p *ngIf="books.length === 0">No books found.</p>
+</div>

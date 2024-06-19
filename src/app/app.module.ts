@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 
 import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
 import { UserListComponent } from './components/users/user-list/user-list.component';
 import { UserFormComponent } from './components/users/user-form/user-form.component';
 import { BookListComponent } from './components/books/book-list/book-list.component';
@@ -19,6 +21,7 @@ import { RentalService } from './services/rental.service';
 @NgModule({
   declarations: [
     HomeComponent,
+    LoginComponent,
     UserListComponent,
     UserFormComponent,
     BookListComponent,
@@ -28,10 +31,11 @@ import { RentalService } from './services/rental.service';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [AuthService, UserService, BookService, RentalService],
+  providers: [AuthService, UserService, BookService, RentalService, provideHttpClient(withFetch())],
   bootstrap: []
 })
 export class AppModule { }

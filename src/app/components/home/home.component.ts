@@ -14,7 +14,16 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     const profile = this.authService.getUserProfile();
-    this.isAdmin = profile === 'ADMIN';
-    this.isUser = profile === 'USER';
+    this.updateUserRoles();
+  }
+
+  updateUserRoles(): void {
+    this.isUser = this.authService.isUser();
+    this.isAdmin = this.authService.isAdmin();
+  }
+
+  logout(): void {
+    this.authService.logout();
+    this.updateUserRoles();
   }
 }

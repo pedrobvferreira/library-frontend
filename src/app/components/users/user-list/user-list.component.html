@@ -1,4 +1,9 @@
 <div class="container">
+  <nav>
+    <ul>
+      <li><a routerLink="/">Home</a></li>
+    </ul>
+  </nav>
   <h2>Lista de Utilizadores</h2>
   <button routerLink="/user-form/0" class="btn btn-primary">Adicionar Novo Utilizador</button>
   <table class="table table-striped mt-3">
@@ -20,7 +25,8 @@
         <td>{{ user.profile }}</td>
         <td>{{ user.active ? 'Sim' : 'Não' }}</td>
         <td>
-          <button routerLink="/user-form/{{ user.id }}" class="btn btn-secondary">Editar</button>
+          <!--a [routerLink]="['/users/edit', user.id]">Editar</a-->
+          <button (click)="editUser($event, user.id)" class="btn btn-danger">Editar</button>
           <button (click)="deactivateUser(user.id)" class="btn btn-danger">Desativar</button>
         </td>
       </tr>

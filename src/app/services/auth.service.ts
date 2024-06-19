@@ -8,11 +8,35 @@ export class AuthService {
 
   constructor() { }
 
+  login(username: string, password: string): boolean {
+    // Simulando login
+    if (username === 'admin' && password === 'admin') {
+      this.userProfile = 'ADMIN';
+      return true;
+    } else if (username === 'user' && password === 'user') {
+      this.userProfile = 'USER';
+      return true;
+    }
+    return false;
+  }
+
+  logout(): void {
+    this.userProfile = 'ANONYMOUS';
+  }
+
   setUserProfile(profile: 'ANONYMOUS' | 'USER' | 'ADMIN'): void {
     this.userProfile = profile;
   }
 
   getUserProfile(): 'ANONYMOUS' | 'USER' | 'ADMIN' {
     return this.userProfile;
+  }
+
+  isUser(): boolean {
+    return this.userProfile === 'USER';
+  }
+
+  isAdmin(): boolean {
+    return this.userProfile === 'ADMIN';
   }
 }

@@ -2,8 +2,7 @@
 <nav>
   <ul>
     <li><a routerLink="/">Home</a></li>
-    <li><a routerLink="/login">Login</a></li>
-    <li ><a routerLink="/books">Livros</a></li>
+    <li *ngIf="!(isLoggedIn | async)"><a routerLink="/login">Login</a></li>
     <li *ngIf="isUser || isAdmin"><a (click)="logout()">Logout</a></li>
     <li *ngIf="isUser || isAdmin"><a routerLink="/books">Livros</a></li>
     <li *ngIf="isAdmin"><a routerLink="/users">Utilizadores</a></li>
